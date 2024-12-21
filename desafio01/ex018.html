@@ -4,90 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do dia</title>
-
-    <style>
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body{
-            background-color: #FAF1BB;
-            height: 95vh;
-            width: 95vw;
-        }
-
-
-
-        .hora, h1{
-            display: block;
-            text-align: center;
-        }
-
-        h1{
-            margin-top: 20px;
-            font-size: 2.5em;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.250);
-        }
-
-        .hora{
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
-
-        .img{
-            background-image: url(img/manha.jpg);
-            height: 250px;
-            width: 250px;
-
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: right top;
-            border-radius: 50%;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .conteiner_principal{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .principal{
-            margin-top: 20px;
-            background-color: white;
-            width: 52vw;
-            height: 52vh;
-            
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            gap: 20px;
-
-            border-radius: 15px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        footer{
-            color: black;
-            text-align: center;
-            font-size: 1.2em;
-            margin-top: 20px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .principal{
-                width: 400px;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript1.js" defer></script>
 
 </head>
 <body>
@@ -109,46 +27,6 @@
     <footer id="credito">
         Criado por Mario Lisboa
     </footer>
-
-    <script>
-
-        const divh = document.getElementsByClassName('hora')[0]
-        const imagem = document.getElementsByClassName('img')[0]
-        const body = document.body
-        const conteiner = document.getElementsByClassName('principal')[0]
-        const footer = document.getElementById('credito')
-
-        const agora = new Date()
-        const hora = agora.getHours()
-        const min = agora.getMinutes()
-        
-        divh.innerText = `Agora são ${hora}:${min}`
-        if (hora > 12){
-            imagem.style.background = 'url(img/tarde.jpg)'
-            imagem.style.backgroundPosition = 'right top'
-            body.style.background = '#EE8A33'
-            conteiner.style.background = '#F5A351'
-            footer.style.color = 'white'
-        } else if(hora < 12){
-            imagem.style.background = 'url(img/manha.jpg)'
-            imagem.style.backgroundPosition = 'right center'
-            body.style.background = '#FAF1BB'
-            conteiner.style.background = 'white'
-
-        } else if(hora >= 18){
-            imagem.style.background = 'url(img/noite.jpg)'
-            imagem.style.backgroundPosition = 'center 70%'
-            body.style.background = '#0F2426'
-            conteiner.style.background = '#061E22'
-            conteiner.style.color = 'white'
-            credito.style.color = 'white'
-        } 
-
-        if (min < 10){
-            divh.innerText = `Agora são ${hora}:0${min}`
-        }
-
-    </script>
 
 </body>
 </html>
